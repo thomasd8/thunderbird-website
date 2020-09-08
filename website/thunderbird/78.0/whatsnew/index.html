@@ -1,0 +1,63 @@
+{# This Source Code Form is subject to the terms of the Mozilla Public
+ # License, v. 2.0. If a copy of the MPL was not distributed with this
+ # file, You can obtain one at http://mozilla.org/MPL/2.0/. #}
+
+{% extends "_includes/base-resp.html" %}
+
+{% block page_title %}{{ _('New in Thunderbird 78') }}{% endblock %}
+
+{% block header_content %}
+  <section class="text-left text-white flex flex-col items-start lg:w-full max-w-6xl mx-auto pl-8 pr-8">
+    <h1 class="font-4xl md:font-hero font-thin md:mt-10 mb-8">{{ self.page_title() }}</h1>
+    <p class="font-lg md:font-xl tracking-wide leading-relaxed max-w-4xl mb-16 mt-0 p-links">
+      {{ _('This article describes some of the major changes visible to users in Thunderbird version 78.0. Please refer to our support article <a href="%(sumonew78)s">New in Thunderbird 78</a> for a more detailed, illustrated overview of changes. A more comprehensive list of changes can be found in the <a href="%(release)s">Thunderbird 78 release notes</a>.')|format(release='https://www.thunderbird.net/en-US/thunderbird/78.0/releasenotes/') }}
+      </p>
+  </section>
+{% endblock %}
+
+{% block content %}
+  <section class="pt-20 pb-20 flex justify-center bg-calendar">
+    <aside class="flex flex-col flex-1 max-w-6xl ml-16 mr-16">
+      <h3 class="header-section">
+        <span>{{ svg('customize') }}</span>
+        {{ _('New Account Hub for centralized account setup')}}
+      </h3>
+      <p class="font-lg tracking-wider leading-loose mb-10">
+        {{ _('Setting up Thunderbird to handle your communications is now even easier. The new Account Hub welcomes you with a neat line-up of all the different account types which Thunderbird can handle, Email, Calendar, Address Book, Chat, FileLink, News feeds, and Newsgroups. You can also import your data from another program.') }}
+      </p>
+      <img class="w-full h-auto mb-10 max-w-lg self-center shadow-lg" src="{{ static('/media/img/thunderbird/features/TB78-AccountHub-FirstTime.png') }}" alt="">
+    </aside>
+  </section>
+
+  <section class="pt-20 pb-20 flex justify-center bg-calendar">
+    <aside class="flex flex-col flex-1 max-w-6xl ml-16 mr-16">
+      <h3 class="header-section">
+        <span>{{ svg('edit') }}</span>
+        {{ _('New Addressing Area')}}
+      </h3>
+      <p class="font-lg tracking-wider leading-loose mb-10">
+        {{ _('The addressing area of the Write window has been redesigned from the ground up for a more convenient and more efficient user experience. Whereas in previous versions of Thunderbird, you could have recipients of different types all mixed up with one row per recipient, a single addressing row can now contain several recipients. So recipients will be automatically grouped by type, for example: To, Cc (copy), and Bcc (blind carbon copy). This makes it much easier for you to see at a glance which recipients belong to which group. Also, each recipient is now an item, which makes selecting and acting on several recipients much more efficient. Developers sometimes jokingly call recipient items recipient pills, because they had very rounded corners at first.') }}
+      </p>
+      <img class="w-full h-auto mb-10 max-w-lg self-center shadow-lg" src="{{ static('/media/img/thunderbird/features/TB78-Compose-Addressing-To.png') }}" alt="">
+    </aside>
+  </section>
+
+
+  <section class="pt-20 pb-20 flex justify-center bg-calendar pr-8 pl-8">
+    <aside class="flex flex-col flex-1 lg:max-w-6xl lg:ml-16 lg:mr-16">
+      <h3 class="header-section">
+        <span>{{ svg('news') }}</span>
+        {{ _('Other Notable Changes')}}
+      </h3>
+      <p class="font-lg tracking-wider leading-loose mb-6">
+        {{ _('There are many other smaller changes that make Thunderbird 78 feel polished and powerful including: a new App Menu UI, an updated To/CC/BCC selector in compose, improved attachment management, full color support across the app, filters can now be set to run periodically, and feed articles now show external attachments as links.') }}
+      </p>
+      <p class="font-lg tracking-wider leading-loose mb-10 p-links-blue">
+        {{ _('There are many other updates in this release, you can see a list of all of them in the <a href="%(release)s">Thunderbird 78 release notes</a>.')|format(release='https://www.thunderbird.net/en-US/thunderbird/78.0/releasenotes/') }}
+      </p>
+    </aside>
+  </section>
+
+  {% include '_includes/donate-mailing-list.html' %}
+
+{% endblock %}
